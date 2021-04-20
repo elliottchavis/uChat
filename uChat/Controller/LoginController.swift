@@ -22,47 +22,14 @@ class  LoginController: UIViewController {
     }()
     
     private lazy var emailContainerView: UIView = {
-       let containerView = UIView()
-        containerView.backgroundColor = .clear
-        
-        let iv = UIImageView()
-        iv.image = UIImage(systemName: "envelope")
-        iv.tintColor = .white
-        
-        containerView.addSubview(iv)
-        iv.centerY(inView: containerView)
-        iv.anchor(left: containerView.leftAnchor, paddingLeft: 8)
-        iv.setDimensions(height: 25, width: 25)
-        
-        containerView.addSubview(emailTextField)
-        emailTextField.centerY(inView: containerView)
-        emailTextField.anchor(left: iv.rightAnchor, bottom: containerView.bottomAnchor,
-                              right: containerView.rightAnchor, paddingLeft: 8, paddingBottom: 4)
-        
-        containerView.setHeight(height: 50)
-        return containerView
+        return InputContainerView(image: UIImage(systemName: "envelope"), textField: emailTextField)
     }()
     
-    private lazy var passwordContainerView: UIView = {
-       let containerView = UIView()
+    private lazy var passwordContainerView: InputContainerView = {
+        let containerView = InputContainerView(image: UIImage(systemName: "lock"), textField: passwordTextField)
         containerView.backgroundColor = .clear
         
-        let iv = UIImageView()
-        iv.image = UIImage(systemName: "lock")
-        iv.tintColor = .white
         
-        containerView.addSubview(iv)
-        iv.centerY(inView: containerView)
-        iv.anchor(left: containerView.leftAnchor, paddingLeft: 8)
-        iv.setDimensions(height: 26, width: 26)
-        
-        containerView.addSubview(passwordTextField)
-        passwordTextField.centerY(inView: containerView)
-        passwordTextField.anchor(left: iv.rightAnchor, bottom: containerView.bottomAnchor,
-                              right: containerView.rightAnchor, paddingLeft: 8, paddingBottom: 4)
-        
-        
-        containerView.setHeight(height: 50)
         return containerView
     }()
     
