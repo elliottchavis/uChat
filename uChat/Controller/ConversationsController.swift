@@ -32,7 +32,7 @@ class ConverstationsController: UIViewController {
     // MARK: - Helpers
     
     func configureUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemTeal
         
         configureNavigationBar()
         configureTableView()
@@ -42,11 +42,12 @@ class ConverstationsController: UIViewController {
     }
     
     func configureTableView() {
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .systemTeal
         view.addSubview(tableView)
         tableView.rowHeight = 80
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.tableFooterView = UIView() //gets rid of emtpy lines, extra lines
+        tableView.tableFooterView?.backgroundColor = .systemTeal
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -57,7 +58,7 @@ class ConverstationsController: UIViewController {
     func configureNavigationBar() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemYellow]
         appearance.backgroundColor = .systemBlue
         
         navigationController?.navigationBar.standardAppearance = appearance
@@ -65,7 +66,7 @@ class ConverstationsController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Messages"
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = .systemYellow
         navigationController?.navigationBar.isTranslucent = true
         
         navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
@@ -84,6 +85,7 @@ extension ConverstationsController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        cell.backgroundColor = .systemTeal
         return cell
     }
     
