@@ -7,9 +7,14 @@
 
 import UIKit
 
+private let reuseIdentifier = "ConversationCell"
+
 class ConverstationsController: UIViewController {
     
     // MARK: - Properties
+    
+    private let tableView = UITableView()
+    
     
     // MARK: - LifeCycle
     
@@ -30,9 +35,23 @@ class ConverstationsController: UIViewController {
         view.backgroundColor = .white
         
         configureNavigationBar()
+        configureTableView()
         
         let image = UIImage(systemName: "person.circle.fill")
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showProfile))
+    }
+    
+    func configureTableView() {
+        tableView.backgroundColor = .white
+        view.addSubview(tableView)
+        tableView.rowHeight = 80
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.tableFooterView = UIView() //gets rid of emtpy lines, extra lines
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.frame = view.frame
     }
     
     func configureNavigationBar() {
@@ -52,4 +71,21 @@ class ConverstationsController: UIViewController {
         navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
 
     }
+}
+
+extension ConverstationsController: UITableViewDelegate {
+    
+}
+
+extension ConverstationsController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        return cell
+    }
+    
+    
 }
