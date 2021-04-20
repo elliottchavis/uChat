@@ -1,0 +1,38 @@
+//
+//  ConversationsController.swift
+//  uChat
+//
+//  Created by agileassociates on 4/19/21.
+//
+
+import UIKit
+
+class ConverstationsController: UIViewController {
+    
+    // MARK: - Properties
+    
+    // MARK: - LifeCycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureUI()
+    }
+    
+    // MARK: - Selectors
+    
+    @objc func showProfile() {
+        print("Profile View Controller")
+    }
+    
+    // MARK: - Helpers
+    
+    func configureUI() {
+        view.backgroundColor = .white
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Messages"
+        
+        let image = UIImage(systemName: "person.circle.fill")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showProfile))
+    }
+}
