@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 //let themeSwitch = ThemeManager(darkTheme: true)
 protocol AuthenticationControllerProtocol {
@@ -90,7 +91,18 @@ class  LoginController: UIViewController {
     // MARK: - Selectors
     
     @objc func handleLogin() {
-        print("DEBUG: handle login here....")
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                print("DEBUG: Failed to sign in with error: \(error.localizedDescription)")
+                return
+            }
+            
+            print("DEBUG: User login successful")
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc func handleShowSignUp() {
@@ -204,7 +216,6 @@ class  LoginController: UIViewController {
     
     
     
-    // MARK: - Selectors
     
 //    @objc func switchStateDidChange(_ sender:UISwitch!)
 //       {
@@ -227,6 +238,7 @@ class  LoginController: UIViewController {
 }
 
 
+// MARK: - Extensions
 
 
 extension LoginController: AuthenticationControllerProtocol {
