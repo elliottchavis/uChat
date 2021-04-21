@@ -4,12 +4,14 @@
 target 'uChat' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-	pod 'Firebase/Analytics'
+  #Pods for BasicChat
+	pod 'Firebase', '~>7.6.0'
 	pod 'Firebase/Core'
+	pod 'Firebase/Storage'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Firestore'
-	pod 'SDWebImage','~>4.4.2'
-	pod 'JGProgressHUD','~>2.0.3'
+	pod 'SDWebImage', '~>4.4.2'
+	pod 'JGProgressHUD', '~>2.0.3'
   # Pods for uChat
 
 end
