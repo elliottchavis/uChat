@@ -19,6 +19,7 @@
 		E2E86F0A262E73D200F7685E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F09262E73D200F7685E /* Extensions.swift */; };
 		E2E86F0D262E7C8F00F7685E /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F0C262E7C8F00F7685E /* ThemeManager.swift */; };
 		E2E86F12262F907800F7685E /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F11262F907800F7685E /* InputContainerView.swift */; };
+		E2E86F16262FAB3800F7685E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F15262FAB3800F7685E /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E2E86F09262E73D200F7685E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E2E86F0C262E7C8F00F7685E /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E2E86F11262F907800F7685E /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		E2E86F15262FAB3800F7685E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		E2E86EFD262E569700F7685E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E2E86F15262FAB3800F7685E /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				E2E86EE8262E55B900F7685E /* SceneDelegate.swift in Sources */,
 				E2E86F07262E69DF00F7685E /* RegistrationController.swift in Sources */,
 				E2E86F04262E69D400F7685E /* LoginController.swift in Sources */,
+				E2E86F16262FAB3800F7685E /* LoginViewModel.swift in Sources */,
 				E2E86F0A262E73D200F7685E /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
