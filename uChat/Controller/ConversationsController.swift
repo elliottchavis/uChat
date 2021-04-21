@@ -46,6 +46,7 @@ class ConversationsController: UIViewController {
         do {
             try Auth.auth().signOut()
             print("User logged out...")
+            presentLoginScreen()
         } catch {
             print("DEBUG: Error signing out...")
         }
