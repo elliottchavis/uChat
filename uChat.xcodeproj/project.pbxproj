@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9615CD9AC78F37E89ACA5A90 /* Pods_uChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */; };
 		E2E86EE6262E55B900F7685E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86EE5262E55B900F7685E /* AppDelegate.swift */; };
 		E2E86EE8262E55B900F7685E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86EE7262E55B900F7685E /* SceneDelegate.swift */; };
 		E2E86EEA262E55B900F7685E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86EE9262E55B900F7685E /* ViewController.swift */; };
@@ -21,9 +22,12 @@
 		E2E86F12262F907800F7685E /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F11262F907800F7685E /* InputContainerView.swift */; };
 		E2E86F16262FAB3800F7685E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F15262FAB3800F7685E /* LoginViewModel.swift */; };
 		E2E86F19262FEB3F00F7685E /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F18262FEB3F00F7685E /* RegistrationViewModel.swift */; };
+		E2E86F1C2630B66B00F7685E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2E86F1B2630B66B00F7685E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BCBACC63A176274758CBF2F4 /* Pods-uChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uChat.debug.xcconfig"; path = "Target Support Files/Pods-uChat/Pods-uChat.debug.xcconfig"; sourceTree = "<group>"; };
+		DB3D4FBE539F058A4051E970 /* Pods-uChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uChat.release.xcconfig"; path = "Target Support Files/Pods-uChat/Pods-uChat.release.xcconfig"; sourceTree = "<group>"; };
 		E2E86EE2262E55B800F7685E /* uChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E86EE5262E55B900F7685E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2E86EE7262E55B900F7685E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 		E2E86F11262F907800F7685E /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		E2E86F15262FAB3800F7685E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E2E86F18262FEB3F00F7685E /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		E2E86F1B2630B66B00F7685E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +53,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9615CD9AC78F37E89ACA5A90 /* Pods_uChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68F31D601508EE6C6C9C9163 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		864B182C476F8E647F970D89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCBACC63A176274758CBF2F4 /* Pods-uChat.debug.xcconfig */,
+				DB3D4FBE539F058A4051E970 /* Pods-uChat.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E2E86ED9262E55B800F7685E = {
 			isa = PBXGroup;
 			children = (
 				E2E86EE4262E55B800F7685E /* uChat */,
 				E2E86EE3262E55B800F7685E /* Products */,
+				864B182C476F8E647F970D89 /* Pods */,
+				68F31D601508EE6C6C9C9163 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +112,7 @@
 				E2E86EEE262E55B900F7685E /* Assets.xcassets */,
 				E2E86EF0262E55B900F7685E /* LaunchScreen.storyboard */,
 				E2E86EF3262E55B900F7685E /* Info.plist */,
+				E2E86F1B2630B66B00F7685E /* GoogleService-Info.plist */,
 			);
 			path = uChat;
 			sourceTree = "<group>";
@@ -146,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2E86EF6262E55B900F7685E /* Build configuration list for PBXNativeTarget "uChat" */;
 			buildPhases = (
+				4E4B15043D1B69986B313878 /* [CP] Check Pods Manifest.lock */,
 				E2E86EDE262E55B800F7685E /* Sources */,
 				E2E86EDF262E55B800F7685E /* Frameworks */,
 				E2E86EE0262E55B800F7685E /* Resources */,
+				B451E58C1241D5CE83729535 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,12 +227,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2E86EF2262E55B900F7685E /* LaunchScreen.storyboard in Resources */,
+				E2E86F1C2630B66B00F7685E /* GoogleService-Info.plist in Resources */,
 				E2E86EEF262E55B900F7685E /* Assets.xcassets in Resources */,
 				E2E86EED262E55B900F7685E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E4B15043D1B69986B313878 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-uChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B451E58C1241D5CE83729535 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-uChat/Pods-uChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-uChat/Pods-uChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-uChat/Pods-uChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E2E86EDE262E55B800F7685E /* Sources */ = {
@@ -363,6 +436,7 @@
 		};
 		E2E86EF7262E55B900F7685E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCBACC63A176274758CBF2F4 /* Pods-uChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -381,6 +455,7 @@
 		};
 		E2E86EF8262E55B900F7685E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB3D4FBE539F058A4051E970 /* Pods-uChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
