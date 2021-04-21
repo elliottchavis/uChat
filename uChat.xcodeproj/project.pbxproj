@@ -20,6 +20,7 @@
 		E2E86F0D262E7C8F00F7685E /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F0C262E7C8F00F7685E /* ThemeManager.swift */; };
 		E2E86F12262F907800F7685E /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F11262F907800F7685E /* InputContainerView.swift */; };
 		E2E86F16262FAB3800F7685E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F15262FAB3800F7685E /* LoginViewModel.swift */; };
+		E2E86F19262FEB3F00F7685E /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F18262FEB3F00F7685E /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E2E86F0C262E7C8F00F7685E /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E2E86F11262F907800F7685E /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		E2E86F15262FAB3800F7685E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E2E86F18262FEB3F00F7685E /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				E2E86F15262FAB3800F7685E /* LoginViewModel.swift */,
+				E2E86F18262FEB3F00F7685E /* RegistrationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2E86EEA262E55B900F7685E /* ViewController.swift in Sources */,
+				E2E86F19262FEB3F00F7685E /* RegistrationViewModel.swift in Sources */,
 				E2E86EE6262E55B900F7685E /* AppDelegate.swift in Sources */,
 				E2E86F01262E56F400F7685E /* ConversationsController.swift in Sources */,
 				E2E86F0D262E7C8F00F7685E /* ThemeManager.swift in Sources */,
