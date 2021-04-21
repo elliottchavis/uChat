@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
 private let reuseIdentifier = "ConversationCell"
 
-class ConverstationsController: UIViewController {
+class ConversationsController: UIViewController {
     
     // MARK: - Properties
     
@@ -21,15 +22,46 @@ class ConverstationsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        authenticateUser()
     }
     
     // MARK: - Selectors
     
     @objc func showProfile() {
-        print("Profile View Controller")
+        logout()
     }
     
+    // MARK: - API
+    
+    func authenticateUser() {
+        if Auth.auth().currentUser?.uid == nil {
+            print("DEBUG: User is not logged in. Presen t login screen here...")
+            presentLoginScreen()
+        } else {
+            print("DEBUG: User is logged in. Configure controller...")
+        }
+    }
+    
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+            print("User logged out...")
+        } catch {
+            print("DEBUG: Error signing out...")
+        }
+    }
+    
+    
     // MARK: - Helpers
+    
+    func presentLoginScreen() {
+        DispatchQueue.main.async {
+            let controller = LoginController()
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        }
+    }
     
     func configureUI() {
         view.backgroundColor = .systemTeal
@@ -74,11 +106,11 @@ class ConverstationsController: UIViewController {
     }
 }
 
-extension ConverstationsController: UITableViewDelegate {
+extension ConversationsController: UITableViewDelegate {
     
 }
 
-extension ConverstationsController: UITableViewDataSource {
+extension ConversationsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
