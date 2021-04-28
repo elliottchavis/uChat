@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		E2E86F16262FAB3800F7685E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F15262FAB3800F7685E /* LoginViewModel.swift */; };
 		E2E86F19262FEB3F00F7685E /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86F18262FEB3F00F7685E /* RegistrationViewModel.swift */; };
 		E2E86F1C2630B66B00F7685E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2E86F1B2630B66B00F7685E /* GoogleService-Info.plist */; };
+		E2EA844E2639AE050025262A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA844D2639AE050025262A /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		E2E86F15262FAB3800F7685E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E2E86F18262FEB3F00F7685E /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E2E86F1B2630B66B00F7685E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E2EA844D2639AE050025262A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,7 +76,6 @@
 				BCBACC63A176274758CBF2F4 /* Pods-uChat.debug.xcconfig */,
 				DB3D4FBE539F058A4051E970 /* Pods-uChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -129,6 +130,7 @@
 		E2E86EFB262E569100F7685E /* API */ = {
 			isa = PBXGroup;
 			children = (
+				E2EA844D2639AE050025262A /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -285,6 +287,7 @@
 				E2E86EEA262E55B900F7685E /* ViewController.swift in Sources */,
 				E2E86F19262FEB3F00F7685E /* RegistrationViewModel.swift in Sources */,
 				E2E86EE6262E55B900F7685E /* AppDelegate.swift in Sources */,
+				E2EA844E2639AE050025262A /* AuthService.swift in Sources */,
 				E2E86F01262E56F400F7685E /* ConversationsController.swift in Sources */,
 				E2E86F0D262E7C8F00F7685E /* ThemeManager.swift in Sources */,
 				E2E86F12262F907800F7685E /* InputContainerView.swift in Sources */,
