@@ -25,6 +25,7 @@
 		E2E86F1C2630B66B00F7685E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2E86F1B2630B66B00F7685E /* GoogleService-Info.plist */; };
 		E2EA844E2639AE050025262A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA844D2639AE050025262A /* AuthService.swift */; };
 		E2EA84512639C19C0025262A /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA84502639C19C0025262A /* NewMessageController.swift */; };
+		E2EA84542639DF850025262A /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA84532639DF850025262A /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		E2E86F1B2630B66B00F7685E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2EA844D2639AE050025262A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E2EA84502639C19C0025262A /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		E2EA84532639DF850025262A /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				E2E86F11262F907800F7685E /* InputContainerView.swift */,
+				E2EA84532639DF850025262A /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				E2EA844E2639AE050025262A /* AuthService.swift in Sources */,
 				E2E86F01262E56F400F7685E /* ConversationsController.swift in Sources */,
 				E2E86F0D262E7C8F00F7685E /* ThemeManager.swift in Sources */,
+				E2EA84542639DF850025262A /* UserCell.swift in Sources */,
 				E2E86F12262F907800F7685E /* InputContainerView.swift in Sources */,
 				E2E86EE8262E55B900F7685E /* SceneDelegate.swift in Sources */,
 				E2E86F07262E69DF00F7685E /* RegistrationController.swift in Sources */,
