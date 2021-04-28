@@ -16,6 +16,16 @@ class ConversationsController: UIViewController {
     
     private let tableView = UITableView()
     
+    private let newMessageButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.backgroundColor = .systemBlue
+        button.tintColor = .systemYellow
+        button.imageView?.setDimensions(height: 25, width: 25)
+        button.addTarget(self, action: #selector(showNewMessage), for: .touchUpInside)
+        return button
+    }()
+    
     
     // MARK: - LifeCycle
     
@@ -29,6 +39,13 @@ class ConversationsController: UIViewController {
     
     @objc func showProfile() {
         logout()
+    }
+    
+    @objc func showNewMessage() {
+        let controller = NewMessageController()
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .pageSheet
+        present(nav, animated: true, completion: nil)
     }
     
     // MARK: - API
@@ -72,6 +89,11 @@ class ConversationsController: UIViewController {
         
         let image = UIImage(systemName: "person.circle.fill")
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showProfile))
+        
+        view.addSubview(newMessageButton)
+        newMessageButton.setDimensions(height: 60, width: 60)
+        newMessageButton.layer.cornerRadius = 60 / 2
+        newMessageButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingBottom: 16, paddingRight: 24)
     }
     
     func configureTableView() {
