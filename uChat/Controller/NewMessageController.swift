@@ -9,11 +9,16 @@ import UIKit
 
 private let reuseIdentifier = "UserCell"
 
+protocol NewMessageControllerDelegate: class {
+    func controller(_ controller: NewMessageController, wantsToStartChatWith user: User)
+}
+
 class NewMessageController: UITableViewController {
     
     // MARK: - Properties
     
     private var users = [User]()
+    weak var delegate: NewMessageControllerDelegate?
     
    
     // MARK: - Lifecycle
@@ -52,6 +57,8 @@ class NewMessageController: UITableViewController {
     }
 }
 
+// MARK: - UITableViewDataSource
+
 extension NewMessageController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
@@ -64,4 +71,14 @@ extension NewMessageController {
         return cell
     }
     
+}
+
+// MARK: - NewMessageControllerDelegate
+
+// this is when you call the delegate function that ConversationsController conforms to....
+extension NewMessageController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("DEBUG: Selected user is \(users[indexPath.row].username)")
+        delegate?.controller(self, wantsToStartChatWith: users[indexPath.row])
+    }
 }

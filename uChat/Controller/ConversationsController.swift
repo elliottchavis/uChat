@@ -43,6 +43,7 @@ class ConversationsController: UIViewController {
     
     @objc func showNewMessage() {
         let controller = NewMessageController()
+        controller.delegate = self
         let nav = UINavigationController(rootViewController: controller)
         nav.modalPresentationStyle = .pageSheet
         present(nav, animated: true, completion: nil)
@@ -126,6 +127,21 @@ extension ConversationsController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         cell.backgroundColor = .systemTeal
         return cell
+    }
+    
+    
+}
+
+// MARK: - NewMessageControllerDelegate
+
+extension ConversationsController: NewMessageControllerDelegate {
+    func controller(_ controller: NewMessageController, wantsToStartChatWith user: User) {
+        print("\n\n\nYou are presssing a button in the NewMessageController and it is sending data back to the ConversationController b/c it is a delegate of NMController")
+        print("DEBUG: User to send message to in conversation controller is \(user.username)")
+        
+        controller.dismiss(animated: true, completion: nil)
+        let chat = ChatController(user: user)                                //send user info to ChatController
+        navigationController?.pushViewController(chat, animated: true)
     }
     
     
