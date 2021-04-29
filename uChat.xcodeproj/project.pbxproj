@@ -30,6 +30,7 @@
 		E2EA845A2639E5B10025262A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA84592639E5B10025262A /* Service.swift */; };
 		E2EA845D2639F4310025262A /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA845C2639F4310025262A /* ChatController.swift */; };
 		E2EA8460263A2D380025262A /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA845F263A2D380025262A /* CustomInputAccessoryView.swift */; };
+		E2EA8463263A3EC90025262A /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8462263A3EC90025262A /* MessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		E2EA84592639E5B10025262A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E2EA845C2639F4310025262A /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		E2EA845F263A2D380025262A /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
+		E2EA8462263A3EC90025262A /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -175,6 +177,7 @@
 				E2E86F11262F907800F7685E /* InputContainerView.swift */,
 				E2EA84532639DF850025262A /* UserCell.swift */,
 				E2EA845F263A2D380025262A /* CustomInputAccessoryView.swift */,
+				E2EA8462263A3EC90025262A /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				E2E86F12262F907800F7685E /* InputContainerView.swift in Sources */,
 				E2EA84572639E5570025262A /* User.swift in Sources */,
 				E2EA845A2639E5B10025262A /* Service.swift in Sources */,
+				E2EA8463263A3EC90025262A /* MessageCell.swift in Sources */,
 				E2E86EE8262E55B900F7685E /* SceneDelegate.swift in Sources */,
 				E2E86F07262E69DF00F7685E /* RegistrationController.swift in Sources */,
 				E2E86F04262E69D400F7685E /* LoginController.swift in Sources */,
