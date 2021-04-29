@@ -13,6 +13,12 @@ class ChatController: UICollectionViewController {
     
     private let user: User
     
+    private lazy var customInputView: CustomInputAccessoryView = {
+        let iv = CustomInputAccessoryView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+        
+        return iv
+    }()
+    
     // MARK: - Lifecycle
     init(user: User) {
         self.user = user
@@ -29,6 +35,22 @@ class ChatController: UICollectionViewController {
         print("\n\n\n\n\n")
         print("DEBUG: You are chatting with \(user.username) in the chat controller")
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        configureNavigationBar(withTitle: user.username, prefersLargeTitles: false)
+//    }
+    
+    override var inputAccessoryView: UIView? {
+        get { return customInputView }
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true 
+    }
+    
+    
+    
     
     // MARK: - Helpers
     

@@ -29,6 +29,7 @@
 		E2EA84572639E5570025262A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA84562639E5570025262A /* User.swift */; };
 		E2EA845A2639E5B10025262A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA84592639E5B10025262A /* Service.swift */; };
 		E2EA845D2639F4310025262A /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA845C2639F4310025262A /* ChatController.swift */; };
+		E2EA8460263A2D380025262A /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA845F263A2D380025262A /* CustomInputAccessoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		E2EA84562639E5570025262A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E2EA84592639E5B10025262A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E2EA845C2639F4310025262A /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		E2EA845F263A2D380025262A /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
 		FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 			children = (
 				E2E86F11262F907800F7685E /* InputContainerView.swift */,
 				E2EA84532639DF850025262A /* UserCell.swift */,
+				E2EA845F263A2D380025262A /* CustomInputAccessoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				E2EA845D2639F4310025262A /* ChatController.swift in Sources */,
 				E2E86F0A262E73D200F7685E /* Extensions.swift in Sources */,
 				E2EA84512639C19C0025262A /* NewMessageController.swift in Sources */,
+				E2EA8460263A2D380025262A /* CustomInputAccessoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
