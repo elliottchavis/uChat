@@ -31,6 +31,8 @@
 		E2EA845D2639F4310025262A /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA845C2639F4310025262A /* ChatController.swift */; };
 		E2EA8460263A2D380025262A /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA845F263A2D380025262A /* CustomInputAccessoryView.swift */; };
 		E2EA8463263A3EC90025262A /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8462263A3EC90025262A /* MessageCell.swift */; };
+		E2EA8466263A4A780025262A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8465263A4A780025262A /* Message.swift */; };
+		E2EA8469263A4F1F0025262A /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8468263A4F1F0025262A /* MessageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		E2EA845C2639F4310025262A /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		E2EA845F263A2D380025262A /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
 		E2EA8462263A3EC90025262A /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		E2EA8465263A4A780025262A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E2EA8468263A4F1F0025262A /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -167,6 +171,7 @@
 			children = (
 				E2E86F15262FAB3800F7685E /* LoginViewModel.swift */,
 				E2E86F18262FEB3F00F7685E /* RegistrationViewModel.swift */,
+				E2EA8468263A4F1F0025262A /* MessageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				E2EA84562639E5570025262A /* User.swift */,
+				E2EA8465263A4A780025262A /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 				E2E86F19262FEB3F00F7685E /* RegistrationViewModel.swift in Sources */,
 				E2E86EE6262E55B900F7685E /* AppDelegate.swift in Sources */,
 				E2EA844E2639AE050025262A /* AuthService.swift in Sources */,
+				E2EA8469263A4F1F0025262A /* MessageViewModel.swift in Sources */,
 				E2E86F01262E56F400F7685E /* ConversationsController.swift in Sources */,
 				E2E86F0D262E7C8F00F7685E /* ThemeManager.swift in Sources */,
 				E2EA84542639DF850025262A /* UserCell.swift in Sources */,
@@ -322,6 +329,7 @@
 				E2E86F16262FAB3800F7685E /* LoginViewModel.swift in Sources */,
 				E2EA845D2639F4310025262A /* ChatController.swift in Sources */,
 				E2E86F0A262E73D200F7685E /* Extensions.swift in Sources */,
+				E2EA8466263A4A780025262A /* Message.swift in Sources */,
 				E2EA84512639C19C0025262A /* NewMessageController.swift in Sources */,
 				E2EA8460263A2D380025262A /* CustomInputAccessoryView.swift in Sources */,
 			);
