@@ -33,6 +33,7 @@
 		E2EA8463263A3EC90025262A /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8462263A3EC90025262A /* MessageCell.swift */; };
 		E2EA8466263A4A780025262A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8465263A4A780025262A /* Message.swift */; };
 		E2EA8469263A4F1F0025262A /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8468263A4F1F0025262A /* MessageViewModel.swift */; };
+		E2EA846C263A7C890025262A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA846B263A7C890025262A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		E2EA8462263A3EC90025262A /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		E2EA8465263A4A780025262A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E2EA8468263A4F1F0025262A /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		E2EA846B263A7C890025262A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 			children = (
 				E2E86F09262E73D200F7685E /* Extensions.swift */,
 				E2E86F0C262E7C8F00F7685E /* ThemeManager.swift */,
+				E2EA846B263A7C890025262A /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2E86EEA262E55B900F7685E /* ViewController.swift in Sources */,
+				E2EA846C263A7C890025262A /* Constants.swift in Sources */,
 				E2E86F19262FEB3F00F7685E /* RegistrationViewModel.swift in Sources */,
 				E2E86EE6262E55B900F7685E /* AppDelegate.swift in Sources */,
 				E2EA844E2639AE050025262A /* AuthService.swift in Sources */,
