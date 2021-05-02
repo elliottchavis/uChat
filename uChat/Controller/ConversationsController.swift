@@ -37,6 +37,12 @@ class ConversationsController: UIViewController {
         fetchConversations()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar(withTitle: "Messages", prefersLargeTitles: true)
+
+    }
+    
     // MARK: - Selectors
     
     @objc func showProfile() {
@@ -95,7 +101,6 @@ class ConversationsController: UIViewController {
     func configureUI() {
         view.backgroundColor = .systemTeal
         
-        configureNavigationBar(withTitle: "Messages", prefersLargeTitles: true)
         configureTableView()
         
         let image = UIImage(systemName: "person.circle.fill")
@@ -111,7 +116,7 @@ class ConversationsController: UIViewController {
         tableView.backgroundColor = .systemTeal
         view.addSubview(tableView)
         tableView.rowHeight = 80
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(ConversationCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.tableFooterView = UIView() //gets rid of emtpy lines, extra lines
         tableView.tableFooterView?.backgroundColor = .systemTeal
         
@@ -124,9 +129,17 @@ class ConversationsController: UIViewController {
     
 }
 
+// MARK: UITableViewDelegate
+
 extension ConversationsController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = conversations[indexPath.row].user
+        let controller = ChatController(user: user)
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
+
+// MARK: UITableViewDataSource
 
 extension ConversationsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -134,9 +147,11 @@ extension ConversationsController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        
         //cell.backgroundColor = .systemTeal                        *******  THEME  *******
-        cell.textLabel?.text = conversations[indexPath.row].message.text
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ConversationCell
+        cell.conversation = conversations[indexPath.row]
         return cell
     }
     
