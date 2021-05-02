@@ -16,6 +16,7 @@ class ConversationsController: UIViewController {
     
     private let tableView = UITableView()
     private var conversations = [Conversation]()
+    private var conversationsDictionary = [String: Conversation]()
     
     private let newMessageButton: UIButton = {
         let button = UIButton(type: .system)
@@ -61,7 +62,12 @@ class ConversationsController: UIViewController {
     
     func fetchConversations() {
         Service.fetchConversations { conversations in
-            self.conversations = conversations
+            conversations.forEach { conversation in
+                let message = conversation.message
+                self.conversationsDictionary[message.chatPartnerId] = conversation
+            }
+            
+            self.conversations = Array(self.conversationsDictionary.values)
             self.tableView.reloadData()
             
         }
@@ -92,6 +98,7 @@ class ConversationsController: UIViewController {
     func presentLoginScreen() {
         DispatchQueue.main.async {
             let controller = LoginController()
+            controller.delegate = self
             let nav = UINavigationController(rootViewController: controller)
             nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true, completion: nil)
@@ -169,6 +176,12 @@ extension ConversationsController: NewMessageControllerDelegate {
         let chat = ChatController(user: user)                                //send user info to ChatController
         navigationController?.pushViewController(chat, animated: true)
     }
-    
-    
+}
+
+extension ConversationsController: AuthenticationDelegate {
+    func authenticationComplete() {
+        dismiss(animated: true, completion: nil)
+        configureUI()
+        fetchConversations()
+    }
 }
