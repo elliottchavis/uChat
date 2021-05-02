@@ -58,6 +58,10 @@ class ConversationCell: UITableViewCell {
         stack.axis = .vertical
         stack.spacing = 4
         
+        addSubview(stack)
+        stack.centerY(inView: profileImageView)
+        stack.anchor(left: profileImageView.rightAnchor, right: rightAnchor, paddingLeft: 12, paddingRight: 16)
+        
         addSubview(timestampLabel)
         timestampLabel.anchor(top: topAnchor, right: rightAnchor, paddingTop: 20, paddingRight: 12)
     }
