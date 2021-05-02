@@ -34,6 +34,8 @@
 		E2EA8466263A4A780025262A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8465263A4A780025262A /* Message.swift */; };
 		E2EA8469263A4F1F0025262A /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8468263A4F1F0025262A /* MessageViewModel.swift */; };
 		E2EA846C263A7C890025262A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA846B263A7C890025262A /* Constants.swift */; };
+		E2EA846F263EF9550025262A /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA846E263EF9550025262A /* ConversationCell.swift */; };
+		E2EA8475263F04C50025262A /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8474263F04C50025262A /* ConversationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		E2EA8465263A4A780025262A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E2EA8468263A4F1F0025262A /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		E2EA846B263A7C890025262A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E2EA846E263EF9550025262A /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		E2EA8474263F04C50025262A /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,9 +131,9 @@
 				E2E86EFB262E569100F7685E /* API */,
 				E2E86EFA262E568E00F7685E /* Utils */,
 				E2E86EE5262E55B900F7685E /* AppDelegate.swift */,
-				E2E86EE7262E55B900F7685E /* SceneDelegate.swift */,
 				E2E86EE9262E55B900F7685E /* ViewController.swift */,
 				E2E86EEB262E55B900F7685E /* Main.storyboard */,
+				E2E86EE7262E55B900F7685E /* SceneDelegate.swift */,
 				E2E86EEE262E55B900F7685E /* Assets.xcassets */,
 				E2E86EF0262E55B900F7685E /* LaunchScreen.storyboard */,
 				E2E86EF3262E55B900F7685E /* Info.plist */,
@@ -175,6 +179,7 @@
 				E2E86F15262FAB3800F7685E /* LoginViewModel.swift */,
 				E2E86F18262FEB3F00F7685E /* RegistrationViewModel.swift */,
 				E2EA8468263A4F1F0025262A /* MessageViewModel.swift */,
+				E2EA8474263F04C50025262A /* ConversationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				E2EA84532639DF850025262A /* UserCell.swift */,
 				E2EA845F263A2D380025262A /* CustomInputAccessoryView.swift */,
 				E2EA8462263A3EC90025262A /* MessageCell.swift */,
+				E2EA846E263EF9550025262A /* ConversationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,12 +333,14 @@
 				E2EA84572639E5570025262A /* User.swift in Sources */,
 				E2EA845A2639E5B10025262A /* Service.swift in Sources */,
 				E2EA8463263A3EC90025262A /* MessageCell.swift in Sources */,
+				E2EA8475263F04C50025262A /* ConversationViewModel.swift in Sources */,
 				E2E86EE8262E55B900F7685E /* SceneDelegate.swift in Sources */,
 				E2E86F07262E69DF00F7685E /* RegistrationController.swift in Sources */,
 				E2E86F04262E69D400F7685E /* LoginController.swift in Sources */,
 				E2E86F16262FAB3800F7685E /* LoginViewModel.swift in Sources */,
 				E2EA845D2639F4310025262A /* ChatController.swift in Sources */,
 				E2E86F0A262E73D200F7685E /* Extensions.swift in Sources */,
+				E2EA846F263EF9550025262A /* ConversationCell.swift in Sources */,
 				E2EA8466263A4A780025262A /* Message.swift in Sources */,
 				E2EA84512639C19C0025262A /* NewMessageController.swift in Sources */,
 				E2EA8460263A2D380025262A /* CustomInputAccessoryView.swift in Sources */,
@@ -484,7 +492,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5PUS6B8C8;
 				INFOPLIST_FILE = uChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,7 +513,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5PUS6B8C8;
 				INFOPLIST_FILE = uChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
