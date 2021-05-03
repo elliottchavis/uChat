@@ -36,6 +36,8 @@
 		E2EA846C263A7C890025262A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA846B263A7C890025262A /* Constants.swift */; };
 		E2EA846F263EF9550025262A /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA846E263EF9550025262A /* ConversationCell.swift */; };
 		E2EA8475263F04C50025262A /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8474263F04C50025262A /* ConversationViewModel.swift */; };
+		E2EA8478263F686C0025262A /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA8477263F686C0025262A /* ProfileController.swift */; };
+		E2EA847B263F6AF80025262A /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA847A263F6AF80025262A /* ProfileHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		E2EA846B263A7C890025262A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E2EA846E263EF9550025262A /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		E2EA8474263F04C50025262A /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		E2EA8477263F686C0025262A /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		E2EA847A263F6AF80025262A /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -169,6 +173,7 @@
 				E2E86F06262E69DF00F7685E /* RegistrationController.swift */,
 				E2EA84502639C19C0025262A /* NewMessageController.swift */,
 				E2EA845C2639F4310025262A /* ChatController.swift */,
+				E2EA8477263F686C0025262A /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				E2EA845F263A2D380025262A /* CustomInputAccessoryView.swift */,
 				E2EA8462263A3EC90025262A /* MessageCell.swift */,
 				E2EA846E263EF9550025262A /* ConversationCell.swift */,
+				E2EA847A263F6AF80025262A /* ProfileHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2EA8478263F686C0025262A /* ProfileController.swift in Sources */,
 				E2E86EEA262E55B900F7685E /* ViewController.swift in Sources */,
 				E2EA846C263A7C890025262A /* Constants.swift in Sources */,
 				E2E86F19262FEB3F00F7685E /* RegistrationViewModel.swift in Sources */,
@@ -337,6 +344,7 @@
 				E2E86EE8262E55B900F7685E /* SceneDelegate.swift in Sources */,
 				E2E86F07262E69DF00F7685E /* RegistrationController.swift in Sources */,
 				E2E86F04262E69D400F7685E /* LoginController.swift in Sources */,
+				E2EA847B263F6AF80025262A /* ProfileHeader.swift in Sources */,
 				E2E86F16262FAB3800F7685E /* LoginViewModel.swift in Sources */,
 				E2EA845D2639F4310025262A /* ChatController.swift in Sources */,
 				E2E86F0A262E73D200F7685E /* Extensions.swift in Sources */,
