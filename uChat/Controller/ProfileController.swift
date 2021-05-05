@@ -52,7 +52,7 @@ class ProfileController: UITableViewController {
         tableView.backgroundColor = .white
         tableView.tableHeaderView = headerView
         headerView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(ProfileCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.tableFooterView = UIView()
     }
     
@@ -62,11 +62,12 @@ class ProfileController: UITableViewController {
 
 extension ProfileController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return ProfileViewModel.allCases.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ProfileCell
+        let viewModel = ProfileViewModel(rawValue: indexPath.row)
         return cell
     }
     
