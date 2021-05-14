@@ -12,6 +12,10 @@ private let reuseIdentifier = "ProfileCell"
 
 class ProfileCell: UITableViewCell {
     
+    var viewModel: ProfileViewModel? {
+        didSet { configure() }
+    }
+    
     // MARK: - Properties
     
     private let iconImage: UIImageView = {
@@ -52,10 +56,17 @@ class ProfileCell: UITableViewCell {
         stack.axis = .horizontal
         
         addSubview(stack)
-        stack.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 1)
+        stack.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 12)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure() {
+        guard let viewModel = viewModel else { return }
+        
+        iconImage.image = UIImage(systemName: viewModel.iconImageName)
+        titleLabel.text = viewModel.description
     }
 }

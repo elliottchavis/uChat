@@ -54,6 +54,7 @@ class ProfileController: UITableViewController {
         headerView.delegate = self
         tableView.register(ProfileCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.tableFooterView = UIView()
+        tableView.rowHeight = 64
     }
     
     
@@ -68,6 +69,8 @@ extension ProfileController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ProfileCell
         let viewModel = ProfileViewModel(rawValue: indexPath.row)
+        cell.viewModel = viewModel
+        
         return cell
     }
     
