@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9615CD9AC78F37E89ACA5A90 /* Pods_uChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */; };
+		E282BC10264ED477004F4089 /* ProfileFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282BC0F264ED477004F4089 /* ProfileFooter.swift */; };
 		E292A469264249F70004D521 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E292A468264249F70004D521 /* ProfileViewModel.swift */; };
 		E292A46C26424B630004D521 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E292A46B26424B630004D521 /* ProfileCell.swift */; };
 		E2E86EE6262E55B900F7685E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86EE5262E55B900F7685E /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		BCBACC63A176274758CBF2F4 /* Pods-uChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uChat.debug.xcconfig"; path = "Target Support Files/Pods-uChat/Pods-uChat.debug.xcconfig"; sourceTree = "<group>"; };
 		DB3D4FBE539F058A4051E970 /* Pods-uChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uChat.release.xcconfig"; path = "Target Support Files/Pods-uChat/Pods-uChat.release.xcconfig"; sourceTree = "<group>"; };
+		E282BC0F264ED477004F4089 /* ProfileFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooter.swift; sourceTree = "<group>"; };
 		E292A468264249F70004D521 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		E292A46B26424B630004D521 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		E2E86EE2262E55B800F7685E /* uChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +206,7 @@
 				E2EA846E263EF9550025262A /* ConversationCell.swift */,
 				E2EA847A263F6AF80025262A /* ProfileHeader.swift */,
 				E292A46B26424B630004D521 /* ProfileCell.swift */,
+				E282BC0F264ED477004F4089 /* ProfileFooter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				E2E86EE6262E55B900F7685E /* AppDelegate.swift in Sources */,
 				E2EA844E2639AE050025262A /* AuthService.swift in Sources */,
 				E2EA8469263A4F1F0025262A /* MessageViewModel.swift in Sources */,
+				E282BC10264ED477004F4089 /* ProfileFooter.swift in Sources */,
 				E2E86F01262E56F400F7685E /* ConversationsController.swift in Sources */,
 				E2E86F0D262E7C8F00F7685E /* ThemeManager.swift in Sources */,
 				E2EA84542639DF850025262A /* UserCell.swift in Sources */,

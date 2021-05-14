@@ -18,6 +18,8 @@ class ProfileController: UITableViewController {
     private var user: User? {
         didSet { headerView.user = user }
     }
+    private let footerView = ProfileFooter()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -53,8 +55,10 @@ class ProfileController: UITableViewController {
         tableView.tableHeaderView = headerView
         headerView.delegate = self
         tableView.register(ProfileCell.self, forCellReuseIdentifier: reuseIdentifier)
-        tableView.tableFooterView = UIView()
         tableView.rowHeight = 64
+        
+        footerView.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
+        tableView.tableFooterView = footerView
     }
     
     
