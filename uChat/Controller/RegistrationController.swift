@@ -107,6 +107,7 @@ class RegistrationController: UIViewController {
         super.viewDidLoad()
         configueUI()
         configureNotificationObservers()
+        hideKeyboard()
     }
     
     // MARK: - Selectors
@@ -177,6 +178,12 @@ class RegistrationController: UIViewController {
         }
     }
     
+    @objc func dismissMyKeyboard(){
+     //endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
+     //In short- Dismiss the active keyboard.
+     view.endEditing(true)
+     }
+    
     // MARK: - Helpers
     
     func checkFormStatus() {
@@ -226,6 +233,15 @@ class RegistrationController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
+    
+    func hideKeyboard(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+         target: self,
+         action: #selector(dismissMyKeyboard))
+         //Add this tap gesture recognizer to the parent view
+         view.addGestureRecognizer(tap)
+    }
+    
 }
 
 extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -240,6 +256,6 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
         plusPhotoButton.imageView?.contentMode = .scaleAspectFill
     dismiss(animated: true, completion: nil)
     }
-    
-    
 }
+
+
