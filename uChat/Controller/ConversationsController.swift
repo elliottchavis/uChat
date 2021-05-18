@@ -48,6 +48,7 @@ class ConversationsController: UIViewController {
     
     @objc func showProfile() {
         let controller = ProfileController(style: .insetGrouped)
+        controller.delegate = self
         let nav = UINavigationController(rootViewController: controller)
         present(nav, animated: true, completion: nil)
     }
@@ -87,7 +88,6 @@ class ConversationsController: UIViewController {
     func logout() {
         do {
             try Auth.auth().signOut()
-            print("User logged out...")
             presentLoginScreen()
         } catch {
             print("DEBUG: Error signing out...")
@@ -185,5 +185,11 @@ extension ConversationsController: AuthenticationDelegate {
         dismiss(animated: true, completion: nil)
         configureUI()
         fetchConversations()
+    }
+}
+
+extension ConversationsController: ProfileControllerDelegate {
+    func handleLogout() {
+        logout()
     }
 }
