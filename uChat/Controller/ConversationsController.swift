@@ -174,7 +174,7 @@ extension ConversationsController: NewMessageControllerDelegate {
         print("\n\n\nYou are presssing a button in the NewMessageController and it is sending data back to the ConversationController b/c it is a delegate of NMController")
         print("DEBUG: User to send message to in conversation controller is \(user.username)")
         
-        controller.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         let chat = ChatController(user: user)                                //send user info to ChatController
         navigationController?.pushViewController(chat, animated: true)
     }
