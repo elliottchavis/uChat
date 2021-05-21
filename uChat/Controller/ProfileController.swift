@@ -31,8 +31,7 @@ class ProfileController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerView.backgroundColor = .systemBlue
-        configureUI()
+        
         fetchUser()
         
 
@@ -41,6 +40,12 @@ class ProfileController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        if ThemeManager.sharedInstance.getTheme() == "Default"{
+            headerView.backgroundColor = .systemBlue
+        } else {
+            headerView.backgroundColor = .systemPink
+        }
+        configureUI()
     }
     
     // MARK: - Selectors
@@ -63,6 +68,7 @@ class ProfileController: UITableViewController {
         headerView.delegate = self
         tableView.register(ProfileCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 64
+        tableView.contentInsetAdjustmentBehavior = .never //hides status bar at top
         
         footerView.delegate = self
         footerView.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
@@ -103,6 +109,11 @@ extension ProfileController {
             print("DEBUG: Show account info...")
         case .settings:
             print("DEBUG: Show settings...")
+            let controller = SettingsController()
+                let nav = UINavigationController(rootViewController: controller)
+                nav.modalPresentationStyle = .fullScreen
+                present(nav, animated: true, completion: nil)
+            
         }
     }
     
