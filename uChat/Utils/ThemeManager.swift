@@ -7,12 +7,18 @@
 
 import UIKit
 
-class ThemeManager {
+class ThemeManager: UserDefaults {
+    static let sharedInstance = ThemeManager()
     
-    var theme: Bool
+    let theme = "theme"
     
-    init(darkTheme: Bool) {
-        theme = darkTheme
+    func setTheme(userTheme: String){
+        setValue(userTheme, forKey: theme)
+    }
+    
+    func getTheme() -> String {
+        print(value(forKey: theme) as Any)
+        return value(forKey: theme) as? String ?? "Default"
     }
 }
 

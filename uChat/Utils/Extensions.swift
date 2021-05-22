@@ -81,7 +81,17 @@ extension UIView {
     
 }
 
-extension UIViewController {
+extension UIViewController: ColorDelegate {
+    
+    
+    func changeColor(_ color: UIColor?) {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = color
+        print("\n\n delegate color is: \(color?.accessibilityName)")
+
+
+    }
+    
     
     static let hud = JGProgressHUD(style: .dark)
     
@@ -107,15 +117,20 @@ extension UIViewController {
     func configureNavigationBar(withTitle title: String, prefersLargeTitles: Bool) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemYellow]
-        appearance.backgroundColor = .systemBlue
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        if ThemeManager.sharedInstance.getTheme() == "Default"{
+            appearance.backgroundColor = .systemBlue
+        } else {
+            appearance.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+
+        }
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
         navigationItem.title = title
-        navigationController?.navigationBar.tintColor = .systemYellow
+        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.isTranslucent = true
         
         navigationController?.navigationBar.overrideUserInterfaceStyle = .dark

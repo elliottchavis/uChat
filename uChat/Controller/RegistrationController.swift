@@ -83,7 +83,11 @@ class RegistrationController: UIViewController {
         button.setTitle("Sign Up", for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        if ThemeManager.sharedInstance.getTheme() == "Default"{
+            button.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        } else {
+            button.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        }
         button.setHeight(height: 50)
         button.setTitleColor(.white, for: .normal)
         button.isEnabled = false
@@ -105,6 +109,12 @@ class RegistrationController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if ThemeManager.sharedInstance.getTheme() == "Default" {
+            configureAquaGradientLayer()
+        } else {
+            configureMiamiGradientLayer()
+        }
         configueUI()
         configureNotificationObservers()
         hideKeyboard()
@@ -189,15 +199,22 @@ class RegistrationController: UIViewController {
     func checkFormStatus() {
         if viewModel.formIsValid {
             signUpButton.isEnabled = true
-            signUpButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            if ThemeManager.sharedInstance.getTheme() == "Default" {
+                signUpButton.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
+            } else {
+                signUpButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            }
         } else {
             signUpButton.isEnabled = false
-            signUpButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+            if ThemeManager.sharedInstance.getTheme() == "Default" {
+                signUpButton.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+            } else {
+                signUpButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+            }
         }
     }
     
     func configueUI() {
-        configureGradientLayer()
         
         view.addSubview(plusPhotoButton)
         plusPhotoButton.centerX(inView: view)
@@ -241,6 +258,25 @@ class RegistrationController: UIViewController {
          //Add this tap gesture recognizer to the parent view
          view.addGestureRecognizer(tap)
     }
+    
+    // MARK: - App Theme
+    
+    func configureMiamiGradientLayer() {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemPink.cgColor]
+        gradient.locations = [0, 1]
+        view.layer.addSublayer(gradient)
+        gradient.frame = view.frame
+    }
+    
+    func configureAquaGradientLayer() {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemBlue.cgColor, UIColor.systemTeal.cgColor]
+        gradient.locations = [0, 1]
+        view.layer.addSublayer(gradient)
+        gradient.frame = view.frame
+    }
+    
     
 }
 

@@ -33,7 +33,12 @@ class ProfileCell: UITableViewCell {
         view.addSubview(iconImage)
         iconImage.centerX(inView: view)
         iconImage.centerY(inView: view)
-        view.backgroundColor = .systemBlue
+        if ThemeManager.sharedInstance.getTheme() == "Default"{
+            view.backgroundColor = .systemBlue
+
+        } else {
+            view.backgroundColor = .systemPink
+        }
         view.setDimensions(height: 40, width: 40)
         view.layer.cornerRadius = 40 / 2
         return view

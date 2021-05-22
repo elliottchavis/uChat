@@ -21,8 +21,14 @@ class ConversationsController: UIViewController {
     private let newMessageButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "plus"), for: .normal)
-        button.backgroundColor = .systemBlue
-        button.tintColor = .systemYellow
+        if ThemeManager.sharedInstance.getTheme() == "Default"{
+            button.backgroundColor = .systemBlue
+            button.tintColor = .white
+        } else {
+            button.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            button.tintColor = .white
+        }
+        
         button.imageView?.setDimensions(height: 25, width: 25)
         button.addTarget(self, action: #selector(showNewMessage), for: .touchUpInside)
         return button
@@ -41,15 +47,25 @@ class ConversationsController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationBar(withTitle: "Messages", prefersLargeTitles: true)
+        if ThemeManager.sharedInstance.getTheme() == "Default"{
+            newMessageButton.backgroundColor = .systemBlue
+            newMessageButton.tintColor = .white
+        } else {
+            newMessageButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            newMessageButton.tintColor = .white
+        }
+        
 
     }
     
     // MARK: - Selectors
     
     @objc func showProfile() {
-        let controller = ProfileController(style: .insetGrouped)
+        //let controller = ProfileController(style: .insetGrouped)
+        let controller = ProfileController()
         controller.delegate = self
         let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
     }
     
@@ -108,7 +124,7 @@ class ConversationsController: UIViewController {
     }
     
     func configureUI() {
-        view.backgroundColor = .systemTeal
+        view.backgroundColor = .white
         
         configureTableView()
         
@@ -122,7 +138,7 @@ class ConversationsController: UIViewController {
     }
     
     func configureTableView() {
-        tableView.backgroundColor = .systemTeal
+        tableView.backgroundColor = .white
         view.addSubview(tableView)
         tableView.rowHeight = 80
         tableView.register(ConversationCell.self, forCellReuseIdentifier: reuseIdentifier)

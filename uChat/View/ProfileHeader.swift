@@ -114,7 +114,12 @@ class  ProfileHeader: UIView {
     
     func configureHeaderGradient() {
         let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemPink.cgColor]
+        if ThemeManager.sharedInstance.getTheme() == "Default"{
+            gradient.colors = [UIColor.systemBlue.cgColor, UIColor.systemTeal.cgColor]
+
+        } else {
+            gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemPink.cgColor]
+        }
         gradient.locations = [0, 1]
         layer.addSublayer(gradient)
         gradient.frame = bounds

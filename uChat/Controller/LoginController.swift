@@ -66,7 +66,11 @@ class  LoginController: UIViewController {
         button.setTitle("Log In", for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        if ThemeManager.sharedInstance.getTheme() == "Default"{
+            button.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        } else {
+            button.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        }
         button.setHeight(height: 50)
         button.setTitleColor(.white, for: .normal)
         button.isEnabled = false
@@ -90,8 +94,11 @@ class  LoginController: UIViewController {
         super.viewDidLoad()
         
 
-        
-        configureMiamiGradientLayer()
+        if ThemeManager.sharedInstance.getTheme() == "Default" {
+            configureAquaGradientLayer()
+        } else {
+            configureMiamiGradientLayer()
+        }
         configureUI()
         hideKeyboard()
         
@@ -195,19 +202,7 @@ class  LoginController: UIViewController {
          //Add this tap gesture recognizer to the parent view
          view.addGestureRecognizer(tap)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     // MARK: - App Theme
     
@@ -227,9 +222,29 @@ class  LoginController: UIViewController {
         gradient.frame = view.frame
     }
     
+}
     
-    
-    
+extension LoginController: AuthenticationControllerProtocol {
+    func checkFormStatus() {
+        if viewModel.formIsValid {
+            if ThemeManager.sharedInstance.getTheme() == "Default"{
+                loginButton.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
+            } else {
+                loginButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            }
+            loginButton.isEnabled = true
+        } else {
+            loginButton.isEnabled = false
+            if ThemeManager.sharedInstance.getTheme() == "Default"{
+                loginButton.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+            } else {
+                loginButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+            }
+
+        }
+    }
+}
+
     
     
     
@@ -262,20 +277,8 @@ class  LoginController: UIViewController {
 //            configureUI()
 //           }
 //       }
-}
 
 
 // MARK: - Extensions
 
 
-extension LoginController: AuthenticationControllerProtocol {
-    func checkFormStatus() {
-        if viewModel.formIsValid {
-            loginButton.isEnabled = true
-            loginButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-        } else {
-            loginButton.isEnabled = false
-            loginButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-        }
-    }
-}
