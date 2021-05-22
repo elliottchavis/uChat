@@ -47,6 +47,14 @@ class ConversationsController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationBar(withTitle: "Messages", prefersLargeTitles: true)
+        if ThemeManager.sharedInstance.getTheme() == "Default"{
+            newMessageButton.backgroundColor = .systemBlue
+            newMessageButton.tintColor = .white
+        } else {
+            newMessageButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            newMessageButton.tintColor = .white
+        }
+        
 
     }
     

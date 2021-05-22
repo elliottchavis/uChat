@@ -39,7 +39,11 @@ class MessageCell: UICollectionViewCell {
     
     private let bubbleContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemBlue
+        if ThemeManager.sharedInstance.getTheme() == "Default"{
+            view.backgroundColor = .systemBlue
+        } else {
+            view.backgroundColor = .systemPink
+        }
         return view
     }()
     

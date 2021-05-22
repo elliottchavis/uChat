@@ -81,7 +81,17 @@ extension UIView {
     
 }
 
-extension UIViewController {
+extension UIViewController: ColorDelegate {
+    
+    
+    func changeColor(_ color: UIColor?) {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = color
+        print("\n\n delegate color is: \(color?.accessibilityName)")
+
+
+    }
+    
     
     static let hud = JGProgressHUD(style: .dark)
     

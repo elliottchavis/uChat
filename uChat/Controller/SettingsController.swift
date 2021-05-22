@@ -9,19 +9,25 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+protocol ColorDelegate: AnyObject {
+    func changeColor(_ color: UIColor?)
+}
+
 class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // MARK: - Properties
     
+   // weak var delegate: ColorDelegate?
+
     private let dismissButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "xmark"), for: .normal)
-        button.addTarget(self, action: #selector(handleDismissal), for: .touchUpInside)
-        button.backgroundColor = .systemBlue
-        button.tintColor = .white
-        button.imageView?.setDimensions(height: 22, width: 22)
-        return button
-    }()
+            let button = UIButton(type: .system)
+            button.setImage(UIImage(systemName: "xmark"), for: .normal)
+            button.addTarget(self, action: #selector(handleDismissal), for: .touchUpInside)
+            button.backgroundColor = .systemBlue
+            button.tintColor = .white
+            button.imageView?.setDimensions(height: 22, width: 22)
+            return button
+        }()
     
     private let themeLabel: UILabel = {
         let label = UILabel()
@@ -34,7 +40,13 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         configureNavigationBar(withTitle: "Settings", prefersLargeTitles: true)
+        let image = UIImage(systemName: "xmark")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(exit))
 
     }
     
@@ -44,17 +56,32 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func exit() {
+        let controller = ProfileController()
+        let nav = UINavigationController(rootViewController: controller)
+
+        show(controller, sender: self)
+    }
+    
     // MARK: - Helpers
     
     func configureUI() {
         view.backgroundColor = .white
         
-        view.addSubview(dismissButton)
-        dismissButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 3)
         
-        view.addSubview(themeLabel)
-        themeLabel.setDimensions(height: 15, width: 64)
-        themeLabel.anchor(top: dismissButton.bottomAnchor, paddingTop: 10)
+        view.addSubview(dismissButton)
+                dismissButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 3)
+                
+                view.addSubview(themeLabel)
+                themeLabel.setDimensions(height: 15, width: 64)
+                themeLabel.anchor(top: dismissButton.bottomAnchor, paddingTop: 10)
+                
+        
+        
+        
+//        view.addSubview(themeLabel)
+//        themeLabel.setDimensions(height: 15, width: 64)
+//        themeLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 10)
         
         
         let picker = UIPickerView()
@@ -92,9 +119,19 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         if row == 0 {
             ThemeManager.sharedInstance.setTheme(userTheme: "Default")
             print(ThemeManager.sharedInstance.getTheme())
+            
+            
+            
+
+            
         } else {
             ThemeManager.sharedInstance.setTheme(userTheme: "Miami")
             print(ThemeManager.sharedInstance.getTheme())
+            
+            
+            
+
         }
+        
     }
 }

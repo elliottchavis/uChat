@@ -12,7 +12,16 @@ struct MessageViewModel {
     private let message: Message
     
     var messageBackgroundColor: UIColor {
-        return message.isFromCurrentUser ? #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) : .systemBlue
+        if message.isFromCurrentUser {
+            return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        } else {
+            if ThemeManager.sharedInstance.getTheme() == "Default"{
+                return .systemBlue
+            } else {
+                return .systemPink
+            }
+        }
+        
     }
     
     var messageTextColor: UIColor {

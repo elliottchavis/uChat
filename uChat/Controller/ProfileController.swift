@@ -33,20 +33,25 @@ class ProfileController: UITableViewController {
         super.viewDidLoad()
         
         fetchUser()
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+                configureUI()
         if ThemeManager.sharedInstance.getTheme() == "Default"{
             headerView.backgroundColor = .systemBlue
         } else {
             headerView.backgroundColor = .systemPink
         }
-        configureUI()
+
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+    }
+    
+
     
     // MARK: - Selectors
     
@@ -111,8 +116,10 @@ extension ProfileController {
             print("DEBUG: Show settings...")
             let controller = SettingsController()
                 let nav = UINavigationController(rootViewController: controller)
-                nav.modalPresentationStyle = .fullScreen
-                present(nav, animated: true, completion: nil)
+                //nav.modalPresentationStyle = .fullScreen
+//                present(controller, animated: true, completion: nil)
+        show(controller, sender: self)
+            
             
         }
     }
