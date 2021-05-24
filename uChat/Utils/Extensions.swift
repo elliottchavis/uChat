@@ -88,8 +88,6 @@ extension UIViewController: ColorDelegate {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = color
         print("\n\n delegate color is: \(color?.accessibilityName)")
-
-
     }
     
     

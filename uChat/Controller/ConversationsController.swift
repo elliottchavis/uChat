@@ -55,7 +55,6 @@ class ConversationsController: UIViewController {
             newMessageButton.tintColor = .white
         }
         
-
     }
     
     // MARK: - Selectors
@@ -150,8 +149,6 @@ class ConversationsController: UIViewController {
         
         tableView.frame = view.frame
     }
-    
-    
 }
 
 // MARK: UITableViewDelegate
@@ -179,8 +176,6 @@ extension ConversationsController: UITableViewDataSource {
         cell.conversation = conversations[indexPath.row]
         return cell
     }
-    
-    
 }
 
 // MARK: - NewMessageControllerDelegate

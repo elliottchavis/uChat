@@ -47,12 +47,6 @@ class ProfileController: UITableViewController {
 
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        
-    }
-    
-
-    
     // MARK: - Selectors
     
     // MARK: - API
@@ -115,11 +109,10 @@ extension ProfileController {
         case .settings:
             print("DEBUG: Show settings...")
             let controller = SettingsController()
-                let nav = UINavigationController(rootViewController: controller)
-                //nav.modalPresentationStyle = .fullScreen
-//                present(controller, animated: true, completion: nil)
-        show(controller, sender: self)
-            
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: true, completion: nil)
+        //show(controller, sender: self)
             
         }
     }
