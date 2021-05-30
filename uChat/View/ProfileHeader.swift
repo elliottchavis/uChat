@@ -11,7 +11,10 @@ protocol ProfileHeaderDelegate: class {
     func dismissController()
 }
 
-class  ProfileHeader: UIView {
+class  ProfileHeader: UIView, PhotoDelegate {
+    func changePhoto(_ photo: UIImage?) {
+        profileImageView.image = photo
+    }
     
         
         // MARK: - Properties
@@ -21,7 +24,7 @@ class  ProfileHeader: UIView {
     }
     
     weak var delegate: ProfileHeaderDelegate?
-    
+        let controller = AccountController()
         private let dismissButton: UIButton = {
             let button = UIButton(type: .system)
             button.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -64,7 +67,6 @@ class  ProfileHeader: UIView {
             super.init(frame: frame)
             configureHeaderGradient()
             configureUI()
-            
         }
         
         required init?(coder: NSCoder) {
@@ -79,6 +81,7 @@ class  ProfileHeader: UIView {
     
     // MARK: - Helpers
     
+    
     func populateUserData() {
         guard let user = user else { return }
         
@@ -87,6 +90,8 @@ class  ProfileHeader: UIView {
         
         guard let url = URL(string: user.profileImageUrl) else { return }
         profileImageView.sd_setImage(with: url)
+        controller.photoDelegate = self
+
     }
     
     func configureUI() {

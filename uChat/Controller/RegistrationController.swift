@@ -144,7 +144,6 @@ class RegistrationController: UIViewController {
             self.delegate?.authenticationComplete()
         }
         
-        
         print(email)
         print(password)
         print(fullname)

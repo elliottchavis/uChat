@@ -14,7 +14,9 @@ protocol ProfileControllerDelegate: class {
     func handleLogout()
 }
 
-class ProfileController: UITableViewController {
+class ProfileController: UITableViewController, PhotoDelegate {
+    
+    
     
     // MARK: - Properties
     
@@ -61,10 +63,15 @@ class ProfileController: UITableViewController {
     
     // MARK: - Helpers
     
+    func changePhoto(_ photo: UIImage?) {
+        headerView.changePhoto(photo)
+    }
+    
     func configureUI() {
         tableView.backgroundColor = .white
         tableView.tableHeaderView = headerView
         headerView.delegate = self
+        
         tableView.register(ProfileCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 64
         tableView.contentInsetAdjustmentBehavior = .never //hides status bar at top
@@ -90,10 +97,6 @@ extension ProfileController {
         
         return cell
     }
-    
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = self.configureHeaderGradient()
-//    }
 }
 
 // MARK: - UITableViewDelegate
@@ -106,6 +109,11 @@ extension ProfileController {
         switch viewModel {
         case .accountInfo:
             print("DEBUG: Show account info...")
+            let controller = AccountController()
+            let nav = UINavigationController(rootViewController: controller)
+            controller.photoDelegate = self
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: true, completion: nil)
         case .settings:
             print("DEBUG: Show settings...")
             let controller = SettingsController()
@@ -123,7 +131,9 @@ extension ProfileController {
 
 extension ProfileController: ProfileHeaderDelegate {
     func dismissController() {
-        dismiss(animated: true, completion: nil)
+        if (self.navigationController?.topViewController == self) {
+            dismiss(animated: true, completion: nil)
+        }
     }
 }
 

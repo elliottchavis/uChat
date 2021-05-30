@@ -88,5 +88,4 @@ class ThemeController: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
             self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         }
     }
-    
 }
