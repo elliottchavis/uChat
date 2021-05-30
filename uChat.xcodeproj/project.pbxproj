@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		29172C10265B505100252339 /* ThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29172C0F265B505100252339 /* ThemeController.swift */; };
 		29172C13265B5BE500252339 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29172C12265B5BE500252339 /* SettingsController.swift */; };
+		2964B8C026603CF000CEB910 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2964B8BF26603CF000CEB910 /* AccountController.swift */; };
+		2964B8C32660504C00CEB910 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2964B8C22660504C00CEB910 /* AccountViewModel.swift */; };
+		2964B8C62660513100CEB910 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2964B8C52660513100CEB910 /* AccountCell.swift */; };
+		2964B8C92660683000CEB910 /* EmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2964B8C82660683000CEB910 /* EmailController.swift */; };
 		9615CD9AC78F37E89ACA5A90 /* Pods_uChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAB9618EAD75C1B0DF0873A /* Pods_uChat.framework */; };
 		E282BC10264ED477004F4089 /* ProfileFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282BC0F264ED477004F4089 /* ProfileFooter.swift */; };
-		E282BC13265383F5004F4089 /* OldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282BC12265383F5004F4089 /* OldController.swift */; };
 		E292A469264249F70004D521 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E292A468264249F70004D521 /* ProfileViewModel.swift */; };
 		E292A46C26424B630004D521 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E292A46B26424B630004D521 /* ProfileCell.swift */; };
 		E2E86EE6262E55B900F7685E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E86EE5262E55B900F7685E /* AppDelegate.swift */; };
@@ -49,10 +52,13 @@
 /* Begin PBXFileReference section */
 		29172C0F265B505100252339 /* ThemeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeController.swift; sourceTree = "<group>"; };
 		29172C12265B5BE500252339 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		2964B8BF26603CF000CEB910 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		2964B8C22660504C00CEB910 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		2964B8C52660513100CEB910 /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		2964B8C82660683000CEB910 /* EmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailController.swift; sourceTree = "<group>"; };
 		BCBACC63A176274758CBF2F4 /* Pods-uChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uChat.debug.xcconfig"; path = "Target Support Files/Pods-uChat/Pods-uChat.debug.xcconfig"; sourceTree = "<group>"; };
 		DB3D4FBE539F058A4051E970 /* Pods-uChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uChat.release.xcconfig"; path = "Target Support Files/Pods-uChat/Pods-uChat.release.xcconfig"; sourceTree = "<group>"; };
 		E282BC0F264ED477004F4089 /* ProfileFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooter.swift; sourceTree = "<group>"; };
-		E282BC12265383F5004F4089 /* OldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldController.swift; sourceTree = "<group>"; };
 		E292A468264249F70004D521 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		E292A46B26424B630004D521 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		E2E86EE2262E55B800F7685E /* uChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,13 +188,14 @@
 			children = (
 				E2E86F00262E56F400F7685E /* ConversationsController.swift */,
 				E2E86F03262E69D400F7685E /* LoginController.swift */,
+				2964B8C82660683000CEB910 /* EmailController.swift */,
 				E2E86F06262E69DF00F7685E /* RegistrationController.swift */,
 				29172C12265B5BE500252339 /* SettingsController.swift */,
 				E2EA84502639C19C0025262A /* NewMessageController.swift */,
 				29172C0F265B505100252339 /* ThemeController.swift */,
 				E2EA845C2639F4310025262A /* ChatController.swift */,
 				E2EA8477263F686C0025262A /* ProfileController.swift */,
-				E282BC12265383F5004F4089 /* OldController.swift */,
+				2964B8BF26603CF000CEB910 /* AccountController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 				E2EA8468263A4F1F0025262A /* MessageViewModel.swift */,
 				E2EA8474263F04C50025262A /* ConversationViewModel.swift */,
 				E292A468264249F70004D521 /* ProfileViewModel.swift */,
+				2964B8C22660504C00CEB910 /* AccountViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -215,6 +223,7 @@
 				E2EA846E263EF9550025262A /* ConversationCell.swift */,
 				E2EA847A263F6AF80025262A /* ProfileHeader.swift */,
 				E292A46B26424B630004D521 /* ProfileCell.swift */,
+				2964B8C52660513100CEB910 /* AccountCell.swift */,
 				E282BC0F264ED477004F4089 /* ProfileFooter.swift */,
 			);
 			path = View;
@@ -347,19 +356,21 @@
 				E2EA8478263F686C0025262A /* ProfileController.swift in Sources */,
 				E2E86EEA262E55B900F7685E /* ViewController.swift in Sources */,
 				E2EA846C263A7C890025262A /* Constants.swift in Sources */,
+				2964B8C026603CF000CEB910 /* AccountController.swift in Sources */,
 				E292A469264249F70004D521 /* ProfileViewModel.swift in Sources */,
 				E2E86F19262FEB3F00F7685E /* RegistrationViewModel.swift in Sources */,
 				E2E86EE6262E55B900F7685E /* AppDelegate.swift in Sources */,
-				E282BC13265383F5004F4089 /* OldController.swift in Sources */,
 				E2EA844E2639AE050025262A /* AuthService.swift in Sources */,
 				E2EA8469263A4F1F0025262A /* MessageViewModel.swift in Sources */,
 				E282BC10264ED477004F4089 /* ProfileFooter.swift in Sources */,
 				E2E86F01262E56F400F7685E /* ConversationsController.swift in Sources */,
+				2964B8C62660513100CEB910 /* AccountCell.swift in Sources */,
 				E2E86F0D262E7C8F00F7685E /* ThemeManager.swift in Sources */,
 				E2EA84542639DF850025262A /* UserCell.swift in Sources */,
 				E2E86F12262F907800F7685E /* InputContainerView.swift in Sources */,
 				E2EA84572639E5570025262A /* User.swift in Sources */,
 				E292A46C26424B630004D521 /* ProfileCell.swift in Sources */,
+				2964B8C32660504C00CEB910 /* AccountViewModel.swift in Sources */,
 				E2EA845A2639E5B10025262A /* Service.swift in Sources */,
 				E2EA8463263A3EC90025262A /* MessageCell.swift in Sources */,
 				E2EA8475263F04C50025262A /* ConversationViewModel.swift in Sources */,
@@ -372,6 +383,7 @@
 				E2E86F0A262E73D200F7685E /* Extensions.swift in Sources */,
 				E2EA846F263EF9550025262A /* ConversationCell.swift in Sources */,
 				29172C10265B505100252339 /* ThemeController.swift in Sources */,
+				2964B8C92660683000CEB910 /* EmailController.swift in Sources */,
 				29172C13265B5BE500252339 /* SettingsController.swift in Sources */,
 				E2EA8466263A4A780025262A /* Message.swift in Sources */,
 				E2EA84512639C19C0025262A /* NewMessageController.swift in Sources */,

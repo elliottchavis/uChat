@@ -87,7 +87,6 @@ class ConversationsController: UIViewController {
             
             self.conversations = Array(self.conversationsDictionary.values)
             self.tableView.reloadData()
-            
         }
     }
     

@@ -51,20 +51,64 @@ struct AuthService {
                                 "fullname": credentials.fullname,
                                 "profileImageUrl": profileImageUrl,
                                 "uid": uid,
-                                "username": credentials.username] as [String : Any]
+                                "username": credentials.username,
+                                "filename": filename] as [String : Any]
                     
                     Firestore.firestore().collection("users").document(uid).setData(data, completion: completion)
-                    
-//                    Firestore.firestore().collection("users").document(uid).setData(data) { error in
-//                        if let error = error {
-//                        print("DEBUG: Failed to upload user with error: \(error.localizedDescription)")
-//                        return
-//                        }
-//
-//                        self.dismiss(animated: true, completion: nil)
-//                    }
                 }
             }
         }
     }
+    
+    func setPhoto(photo: UIImage, completion: ((Error?)-> Void)?) {
+        guard let imageData = photo.jpegData(compressionQuality: 0.3) else { return }
+        let filename = NSUUID().uuidString
+        let ref = Storage.storage().reference(withPath: "/profile_images/\(filename)")
+        
+        ref.putData(imageData, metadata: nil) { (meta, error) in
+            if let error = error {
+                completion!(error)
+                return
+            }
+            
+            ref.downloadURL { (url, error) in
+                guard let profileImageUrl = url?.absoluteString else { return }
+                
+                let user = Auth.auth().currentUser
+                guard let uid = user?.uid else { return }
+                
+                Firestore.firestore().collection("users").document(uid).updateData(["profileImageUrl": profileImageUrl, "filename": filename])
+                
+            }
+        }
+    }
+    
+    func deletePhoto() {
+        var filename: Any?
+        let user = Auth.auth().currentUser
+        guard let uid = user?.uid else { return }
+        
+        Firestore.firestore().collection("users").document(uid).getDocument{(document, error) in
+            if let document = document, document.exists {
+                     filename = document.get("filename")
+                 let unwrappedFilename = filename!
+                let ref = Storage.storage().reference(withPath: "/profile_images/\(unwrappedFilename)")
+                print("\n\n\n The  unwrapped filename is:  \(unwrappedFilename)")
+                
+                // Delete the file
+                ref.delete { error in
+                  if let error = error {
+                    // Uh-oh, an error occurred!
+                    print("\n\n\nDEBUG: error is .....\(error.localizedDescription)")
+                  } else {
+                    print("\n\n\nDEBUG:  \(unwrappedFilename) File deleted successfully")
+                  }
+                }
+                } else {
+                    print("Document does not exist")
+                }
+        }
+    }
+    
+    
 }
