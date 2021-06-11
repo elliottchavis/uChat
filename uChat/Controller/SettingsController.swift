@@ -11,9 +11,17 @@ class SettingsController: UIViewController {
     
     private let themeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .systemBlue
-        button.titleLabel?.text = "Themes"
-        button.tintColor = .white
+        button.backgroundColor = .white
+        //button.titleLabel?.text = "Themes"  ... doesn't work, use setTitle below
+        button.setTitle("Themes", for: .normal)
+        //button.tintColor = .blue
+        if ThemeManager.sharedInstance.getTheme() == "Default"{
+            button.setTitleColor(.blue, for: .normal)
+
+        } else {
+            button.setTitleColor(.systemPink, for: .normal)
+
+        }
         button.addTarget(self, action: #selector(showThemes), for: .touchUpInside)
 
         return button
