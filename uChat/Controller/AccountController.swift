@@ -77,6 +77,8 @@ class AccountController: UITableViewController, ProfileHeaderDelegate {
         tableView.register(AccountCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 64
         tableView.contentInsetAdjustmentBehavior = .never //hides status bar at top
+        tableView.tableFooterView = UIView() //gets rid of emtpy lines, extra lines
+
     }
     
 }
