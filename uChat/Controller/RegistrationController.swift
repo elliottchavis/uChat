@@ -8,8 +8,6 @@
 import UIKit
 import Firebase
 
-
-
 class RegistrationController: UIViewController {
     
     // MARK: - Properties
@@ -44,7 +42,6 @@ class RegistrationController: UIViewController {
         let containerView = InputContainerView(image: UIImage(systemName: "lock"), textField: passwordTextField)
         containerView.backgroundColor = .clear
         
-        
         return containerView
     }()
     
@@ -71,7 +68,7 @@ class RegistrationController: UIViewController {
     
     private let passwordTextField: UITextField = {
         let txt = UITextField()
-        txt.placeholder = "Password  (min 8 characters)"
+        txt.placeholder = "Password  (min 6 characters)"
         txt.isSecureTextEntry = true
         txt.textColor = .white
 
@@ -136,7 +133,7 @@ class RegistrationController: UIViewController {
         AuthService.shared.createUser(credentials: credentials) { error in
             if let error = error {
                 print("DEBUG: \(error.localizedDescription)")
-                self.showLoader(false)
+                self.showLoader(true, withText: error.localizedDescription)
                 return
             }
             

@@ -100,6 +100,7 @@ extension UIViewController {
         
         if show {
             UIViewController.hud.show(in: view)
+            UIViewController.hud.dismiss(afterDelay: 2)
         } else {
             UIViewController.hud.dismiss()
         }
