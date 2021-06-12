@@ -71,7 +71,7 @@ class RegistrationController: UIViewController {
     
     private let passwordTextField: UITextField = {
         let txt = UITextField()
-        txt.placeholder = "Password"
+        txt.placeholder = "Password  (min 8 characters)"
         txt.isSecureTextEntry = true
         txt.textColor = .white
 
@@ -164,6 +164,7 @@ class RegistrationController: UIViewController {
         checkFormStatus()
     }
     
+    
     @objc func handleSelectPhoto() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -196,7 +197,7 @@ class RegistrationController: UIViewController {
     // MARK: - Helpers
     
     func checkFormStatus() {
-        if viewModel.formIsValid {
+        if viewModel.formIsValid && profileImage != nil{
             signUpButton.isEnabled = true
             if ThemeManager.sharedInstance.getTheme() == "Default" {
                 signUpButton.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
@@ -206,7 +207,7 @@ class RegistrationController: UIViewController {
         } else {
             signUpButton.isEnabled = false
             if ThemeManager.sharedInstance.getTheme() == "Default" {
-                signUpButton.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+                signUpButton.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
             } else {
                 signUpButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
             }
@@ -289,6 +290,7 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
         plusPhotoButton.layer.cornerRadius = 200 / 2
         plusPhotoButton.imageView?.clipsToBounds = true
         plusPhotoButton.imageView?.contentMode = .scaleAspectFill
+        checkFormStatus()
     dismiss(animated: true, completion: nil)
     }
 }
