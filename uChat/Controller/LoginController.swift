@@ -116,11 +116,6 @@ class  LoginController: UIViewController {
             if let error = error {
                 print("DEBUG: Failed to login with error \(error.localizedDescription)")
                 self.showLoader(true, withText: error.localizedDescription)
-                
-                let hud = JGProgressHUD()
-                hud.show(in: self.view)
-                hud.dismiss(afterDelay: 0.5)
-
 
                 return
             }
