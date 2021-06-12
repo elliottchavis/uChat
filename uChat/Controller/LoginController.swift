@@ -115,7 +115,13 @@ class  LoginController: UIViewController {
         AuthService.shared.logUserIn(withEmail: email, password: password) { result, error  in
             if let error = error {
                 print("DEBUG: Failed to login with error \(error.localizedDescription)")
-                self.showLoader(false)
+                self.showLoader(true, withText: error.localizedDescription)
+                
+                let hud = JGProgressHUD()
+                hud.show(in: self.view)
+                hud.dismiss(afterDelay: 0.5)
+
+
                 return
             }
             
