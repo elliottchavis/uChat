@@ -5,7 +5,7 @@
 //  Created by agileassociates on 4/21/21.
 //
 
-import Foundation
+import UIKit
 
 protocol  AuthenticationProtocol {
     var formIsValid: Bool { get }
@@ -16,6 +16,7 @@ struct RegistrationViewModel: AuthenticationProtocol {
     var password: String?
     var fullname: String?
     var username: String?
+    
     
     var formIsValid: Bool {
         return email?.isEmpty == false
