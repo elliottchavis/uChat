@@ -54,7 +54,6 @@ class ConversationsController: UIViewController {
             newMessageButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
             newMessageButton.tintColor = .white
         }
-        
     }
     
     // MARK: - Selectors
@@ -107,10 +106,9 @@ class ConversationsController: UIViewController {
             print("DEBUG: Error signing out...")
         }
     }
-    
-    
+
     // MARK: - Helpers
-    
+
     func presentLoginScreen() {
         DispatchQueue.main.async {
             let controller = LoginController()
